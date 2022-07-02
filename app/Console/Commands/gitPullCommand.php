@@ -40,14 +40,6 @@ class gitPullCommand extends Command
 
             $this->error("An error occurred while executing 'git pull'. \nLogs:");
 
-<<<<<<< HEAD
-            foreach($this->pullLog as $logLine) {
-                $this->info($logLine);
-            }
-
-            return;
-        }
-=======
              foreach($this->pullLog as $logLine) {
                  $this->info($logLine);
              }
@@ -56,7 +48,6 @@ class gitPullCommand extends Command
         }
         
         $this->holaMundo();
->>>>>>> 7f956c1a60e1a86658822f6c8ee909d5cae5694c
 
     }
     
