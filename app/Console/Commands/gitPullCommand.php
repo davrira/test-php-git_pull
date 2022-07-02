@@ -28,16 +28,22 @@ class gitPullCommand extends Command
      */
     public function handle()
     {
-        if(!$this->runPull()) {
 
-            $this->error("An error occurred while executing 'git pull'. \nLogs:");
+        $res = shell_exec('git pull');
 
-            foreach($this->pullLog as $logLine) {
-                $this->info($logLine);
-            }
+        $this->runPull();
 
-            return;
-        }
+        // if(!$this->runPull()) {
+
+        //     $this->error("An error occurred while executing 'git pull'. \nLogs:");
+
+        //     foreach($this->pullLog as $logLine) {
+        //         $this->info($logLine);
+        //     }
+
+        //     return;
+        // }
+
     }
     
     
