@@ -71,7 +71,7 @@ class gitPullCommand extends Command
     
     private function holaMundo()
     {
-        $this->info('Cambios desde github');
+        $this->info('Cambios desde github - no');
     }
 
 }
