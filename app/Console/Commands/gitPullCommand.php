@@ -32,20 +32,20 @@ class gitPullCommand extends Command
         $datos = "algo en la consola";
         $this->info($datos);
         
-        //$res = shell_exec('git pull');
+        $res = shell_exec('git pull');
 
         //$this->runPull();
 
-        if(!$this->runPull()) {
+        // if(!$this->runPull()) {
 
-            $this->error("An error occurred while executing 'git pull'. \nLogs:");
+        //     $this->error("An error occurred while executing 'git pull'. \nLogs:");
 
-             foreach($this->pullLog as $logLine) {
-                $this->info($logLine);
-             }
+        //      foreach($this->pullLog as $logLine) {
+        //         $this->info($logLine);
+        //      }
 
-             return;
-        }
+        //      return;
+        // }
 
     }
     
