@@ -36,16 +36,18 @@ class gitPullCommand extends Command
 
         $this->runPull();
 
-        // if(!$this->runPull()) {
+        if(!$this->runPull()) {
 
-        //     $this->error("An error occurred while executing 'git pull'. \nLogs:");
+            $this->error("An error occurred while executing 'git pull'. \nLogs:");
 
-        //     foreach($this->pullLog as $logLine) {
-        //         $this->info($logLine);
-        //     }
+             foreach($this->pullLog as $logLine) {
+                 $this->info($logLine);
+             }
 
-        //     return;
-        // }
+             return;
+        }
+        
+        $this->holaMundo();
 
     }
     
@@ -66,6 +68,12 @@ class gitPullCommand extends Command
         });
 
         return $process->isSuccessful();
+    }
+    
+    
+    private function holaMundo()
+    {
+        $this->info('Cambios desde github');
     }
 
 }
