@@ -28,7 +28,10 @@ class gitPullCommand extends Command
      */
     public function handle()
     {
-
+        
+        $datos = "algo en la consola";
+        $this->$info($datos);
+        
         $res = shell_exec('git pull');
 
         $this->runPull();
