@@ -30,24 +30,22 @@ class gitPullCommand extends Command
     {
         
         $datos = "algo en la consola";
-        $this->$info($datos);
+        $this->info($datos);
         
-        $res = shell_exec('git pull');
+        //$res = shell_exec('git pull');
 
-        $this->runPull();
+        //$this->runPull();
 
         if(!$this->runPull()) {
 
             $this->error("An error occurred while executing 'git pull'. \nLogs:");
 
              foreach($this->pullLog as $logLine) {
-                $this->$info($logLine);
+                $this->info($logLine);
              }
 
              return;
         }
-        
-        $this->holaMundo();
 
     }
     
@@ -56,7 +54,7 @@ class gitPullCommand extends Command
     {
 
         $process = new Process(['git pull']);
-        $this->$info("Running 'git pull'");
+        $this->info("Running 'git pull'");
 
         $process->run(function($type, $buffer) {
             $this->pullLog[] = $buffer;
@@ -73,7 +71,7 @@ class gitPullCommand extends Command
     
     private function holaMundo()
     {
-        $this->$info('Cambios desde github');
+        $this->info('Cambios desde github');
     }
 
 }
